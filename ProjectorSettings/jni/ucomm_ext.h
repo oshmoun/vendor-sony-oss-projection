@@ -29,5 +29,6 @@
 int ucommsvr_set_backlight(int brightness);
 int ucommsvr_set_keystone(int ksval);
 int ucommsvr_set_focus(int focus);
+int ucommsvr_do_autofocus(void);
 
 #endif //PROJECTORSETTINGS_UCOMM_EXT_H

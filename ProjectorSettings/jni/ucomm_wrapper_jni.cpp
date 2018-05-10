@@ -36,6 +36,15 @@ Java_sonyxperiadev_projectorsettings_MainActivity_ucommsvrSetFocus(
 
 extern "C"
 JNIEXPORT jint JNICALL
+Java_sonyxperiadev_projectorsettings_MainActivity_ucommsvrDoAutoFocus(
+        JNIEnv *env,
+        jobject obj) {
+
+    return ucommsvr_do_autofocus();
+}
+
+extern "C"
+JNIEXPORT jint JNICALL
 Java_sonyxperiadev_projectorsettings_MainActivity_ucommsvrSetKeystone(
         JNIEnv *env, jobject obj,
         jint ksval) {

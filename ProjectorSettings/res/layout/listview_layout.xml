@@ -124,6 +124,18 @@
             android:textColor="@android:color/white" />
 
         <ImageButton
+            android:id="@+id/btnAutoFocus"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="2dp"
+            android:layout_marginRight="2dp"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/button_style"
+            android:onClick="onClick_btnAutoFocus"
+            android:src="@drawable/grid_button"
+            android:textColor="@android:color/white" />
+
+        <ImageButton
             android:id="@+id/btnGrid"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"

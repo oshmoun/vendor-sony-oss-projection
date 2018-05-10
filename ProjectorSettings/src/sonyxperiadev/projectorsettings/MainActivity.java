@@ -228,6 +228,7 @@ public class MainActivity extends Activity {
      * which is packaged with this application.
      */
     public native int ucommsvrSetFocus(int focus);
+    public native int ucommsvrDoAutoFocus();
     public native int ucommsvrSetKeystone(int ksval);
     public native int ucommsvrGetFocus();
     public native int ucommsvrGetKeystone();
@@ -293,8 +294,13 @@ public class MainActivity extends Activity {
     }
 
     public void onClick_btnFocus(View view) {
-        int focusval = ucommsvrGetFocus();
         send_enabled = false;
+        refreshFocusSlider();
+        send_enabled = true;
+    }
+
+    private void refreshFocusSlider() {
+        int focusval = ucommsvrGetFocus();
         adjLayout.setTag(TAG_FOCUS);
         mainView.setVisibility(View.INVISIBLE);
 
@@ -320,7 +326,6 @@ public class MainActivity extends Activity {
         set_keystone = false;
 
         adjLayout.setVisibility(View.VISIBLE);
-        send_enabled = true;
     }
 
     public void onClick_btnKeystone(View view) {
@@ -350,6 +355,13 @@ public class MainActivity extends Activity {
 
         adjLayout.setVisibility(View.VISIBLE);
 
+        send_enabled = true;
+    }
+
+    public void onClick_btnAutoFocus(View view) {
+        send_enabled = false;
+        ucommsvrDoAutoFocus();
+        refreshFocusSlider();
         send_enabled = true;
     }
 
